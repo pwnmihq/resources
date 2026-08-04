@@ -1,0 +1,8 @@
+# Sudo misconfiguration -- NOPASSWD sudo on vim, unrestricted, granted
+# so `analyst` could edit config files without a password prompt each
+# time. No web service, no ports needed -- access is via
+# `docker compose exec` as the unprivileged `analyst` user.
+services:
+  app:
+    build: .
+    restart: "no"

@@ -1,0 +1,8 @@
+# SUID binary abuse -- find left SUID-root after a one-off maintenance
+# task. No web service, no ports needed -- this is a local-privesc lab,
+# not a network target. Access is via `docker compose exec` as the
+# unprivileged `analyst` user.
+services:
+  app:
+    build: .
+    restart: "no"

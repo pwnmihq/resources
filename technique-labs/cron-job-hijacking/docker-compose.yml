@@ -1,0 +1,8 @@
+# Cron job hijacking -- root's crontab runs /opt/scripts/backup.sh every
+# minute, left world-writable after being copied in during setup. No
+# web service, no ports needed -- access is via `docker compose exec`
+# as the unprivileged `analyst` user.
+services:
+  app:
+    build: .
+    restart: "no"

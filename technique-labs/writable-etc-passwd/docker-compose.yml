@@ -1,0 +1,8 @@
+# Writable /etc/passwd -- left world-writable (666) after a
+# config-management run globbed too broadly under /etc. No web service,
+# no ports needed -- access is via `docker compose exec` as the
+# unprivileged `analyst` user.
+services:
+  app:
+    build: .
+    restart: "no"

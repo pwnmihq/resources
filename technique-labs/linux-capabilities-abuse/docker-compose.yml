@@ -1,0 +1,8 @@
+# Linux capabilities abuse -- cap_setuid+ep left on the python3
+# interpreter itself instead of a narrowly-scoped compiled helper. No
+# web service, no ports needed -- access is via `docker compose exec`
+# as the unprivileged `analyst` user.
+services:
+  app:
+    build: .
+    restart: "no"
